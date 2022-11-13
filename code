@@ -1,0 +1,282 @@
+if game.PlaceId == 10106105124 then
+getgenv().wheat = false
+getgenv().zigzagwheat = false
+getgenv().verticalwheat = false
+
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
+
+local win = DiscordLib:Window("KroWare")
+
+local serv = win:Server("KroWare", "")
+
+local tgls = serv:Channel("Main")
+
+local btns = serv:Channel("Teleport")
+
+btns:Button(
+    "Shop",
+    function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(228.161789, 46.3899918, -444.399445, -1, 5.03997066e-09, -3.69280984e-09, 5.03997066e-09, 1, 2.40628406e-08, 3.69281006e-09, 2.40628406e-08, -1)
+    end
+)
+
+btns:Button(
+    "Sell",
+    function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99.6660614, 46.3899918, -426.956543, 0.726278007, 1.92989944e-08, 0.687401056, -1.04836415e-08, 1, -1.69987455e-08, -0.687401056, 5.13934983e-09, 0.726278007)
+    end
+)
+
+btns:Button(
+    "Codes",
+    function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(411.501343, 46.3899918, -398.830994, -0.999580979, 2.65215991e-08, 0.0289460346, 2.72487242e-08, 1, 2.4725578e-08, -0.0289460346, 2.55039598e-08, -0.999580979)
+    end
+)
+
+
+tgls:Toggle(
+    "Farm [FAST]",
+    false,
+    function(bool)
+        getgenv().wheat = bool
+        if bool then
+        farmWheat();
+        print(bool)
+        end
+end)
+
+tgls:Toggle(
+    "Zig-Zag Farm [OP]",
+    false,
+    function(bool)
+    getgenv().zigzagwheat = bool
+    if bool then
+    farmZigZagWheat();
+    print(bool)
+    end
+end)
+
+tgls:Toggle(
+    "Vertical Farm [WORST]",
+    false,
+    function(bool)
+    getgenv().verticalwheat = bool
+    if bool then
+    farmVerticalWheat();
+    print(bool)
+    end
+end)
+
+btns:Seperator()
+
+
+
+function farmVerticalWheat()
+    spawn(function()
+    while getgenv().verticalwheat == true do
+    local teleport_table = {
+        location1 = Vector3.new(640, 46, -349), -- your desired position
+        location2 = Vector3.new(639, 46, 385),  -- your desired position
+        location3 = Vector3.new(614, 46, 387),
+        location4 = Vector3.new(617, 46, -347),
+        location5 = Vector3.new(576, 46, -346),
+        location6 = Vector3.new(566, 46, 383),
+        location7 = Vector3.new(531, 46, 383),
+        location8 = Vector3.new(531, 46, -344)
+    }
+    
+    local tween_s = game:GetService('TweenService')
+    local tweeninfo = TweenInfo.new(0.8,Enum.EasingStyle.Linear)
+    
+    local lp = game.Players.LocalPlayer
+    
+    function bypass_teleport(v)
+        if lp.Character and 
+        lp.Character:FindFirstChild('HumanoidRootPart') then
+            local cf = CFrame.new(v)
+            local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+            a:Play()
+            -- a.Completed:Wait()
+            -- print('Teleporting Done!')
+        end
+    end
+    
+    bypass_teleport(teleport_table.location1)
+    wait(1)
+    bypass_teleport(teleport_table.location2)
+    wait(1)
+    bypass_teleport(teleport_table.location3)
+    wait(1)
+    bypass_teleport(teleport_table.location4)
+    wait(1)
+    bypass_teleport(teleport_table.location5)
+    wait(1)
+    bypass_teleport(teleport_table.location6)
+    wait(1)
+    bypass_teleport(teleport_table.location7)
+    wait(1)
+    bypass_teleport(teleport_table.location8)
+    wait(1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99.6660614, 46.3899918, -426.956543, 0.726278007, 1.92989944e-08, 0.687401056, -1.04836415e-08, 1, -1.69987455e-08, -0.687401056, 5.13934983e-09, 0.726278007)
+    wait()
+    
+
+function farmZigZagWheat()
+    spawn(function()
+    while getgenv().zigzagwheat == true do
+        local teleport_table = {
+        location1 = Vector3.new(-98, 46, -350), -- your desired position
+        location2 = Vector3.new(-81, 46, -349),  -- your desired position
+        location3 = Vector3.new(-96, 46, -327),
+        location4 = Vector3.new(-70, 46, -348),
+        location5 = Vector3.new(-98, 46, -311),
+        location6 = Vector3.new(-18, 46, -349),
+        location7 = Vector3.new(-96, 46, -159),
+        location8 = Vector3.new(195, 46, -355),
+        location9 = Vector3.new(-98, 46, 157),
+        location10 = Vector3.new(644, 46, -284),
+        location11 = Vector3.new(-12, 46, 390),
+        location12 = Vector3.new(643, 46, 384)
+    }
+    
+    local tween_s = game:GetService('TweenService')
+    local tweeninfo = TweenInfo.new(0.8,Enum.EasingStyle.Linear)
+    
+    local lp = game.Players.LocalPlayer
+    
+    function bypass_teleport(v)
+        if lp.Character and 
+        lp.Character:FindFirstChild('HumanoidRootPart') then
+            local cf = CFrame.new(v)
+            local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+            a:Play()
+            -- a.Completed:Wait()
+            -- print('Teleporting Done!')
+        end
+    end
+    
+    bypass_teleport(teleport_table.location1)
+    wait(0.5)
+    bypass_teleport(teleport_table.location2)
+    wait(0.5)
+    bypass_teleport(teleport_table.location3)
+    wait(0.5)
+    bypass_teleport(teleport_table.location4)
+    wait(0.5)
+    bypass_teleport(teleport_table.location5)
+    wait(0.5)
+    bypass_teleport(teleport_table.location6)
+    wait(0.5)
+    bypass_teleport(teleport_table.location7)
+    wait(0.5)
+    bypass_teleport(teleport_table.location8)
+    wait(0.5)
+    bypass_teleport(teleport_table.location9)
+    wait(0.5)
+    bypass_teleport(teleport_table.location10)
+    wait(0.5)
+    bypass_teleport(teleport_table.location11)
+    wait(0.5)
+    bypass_teleport(teleport_table.location12)
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99.6660614, 46.3899918, -426.956543, 0.726278007, 1.92989944e-08, 0.687401056, -1.04836415e-08, 1, -1.69987455e-08, -0.687401056, 5.13934983e-09, 0.726278007)
+    wait()
+
+function farmWheat()
+    spawn(function()
+        while getgenv().wheat == true do
+           local teleport_table = {
+        location1 = Vector3.new(640, 46, 386), -- your desired position
+        location2 = Vector3.new(-95, 46, 388)  -- your desired position
+    }
+    
+    local tween_s = game:GetService('TweenService')
+    local tweeninfo = TweenInfo.new(0.8,Enum.EasingStyle.Linear)
+    
+    local lp = game.Players.LocalPlayer
+    
+    function bypass_teleport(v)
+        if lp.Character and 
+        lp.Character:FindFirstChild('HumanoidRootPart') then
+            local cf = CFrame.new(v)
+            local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+            a:Play()
+            -- a.Completed:Wait()
+            -- print('Teleporting Done!')
+        end
+    end
+    
+    bypass_teleport(teleport_table.location1)
+    wait(0.1)
+    bypass_teleport(teleport_table.location2)
+   
+    wait()
+    
+    
+    local teleport_table = {
+        location1 = Vector3.new(645, 46, -353), -- your desired position
+        location2 = Vector3.new(-100, 46, -352)  -- your desired position
+    }
+    
+    local tween_s = game:GetService('TweenService')
+    local tweeninfo = TweenInfo.new(0.8,Enum.EasingStyle.Linear)
+    
+    local lp = game.Players.LocalPlayer
+    
+    function bypass_teleport(v)
+        if lp.Character and 
+        lp.Character:FindFirstChild('HumanoidRootPart') then
+            local cf = CFrame.new(v)
+            local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+            a:Play()
+            -- a.Completed:Wait()
+            -- print('Teleporting Done!')
+        end
+    end
+    
+    bypass_teleport(teleport_table.location1)
+    wait(0.1)
+    bypass_teleport(teleport_table.location2)
+  
+    wait()
+    
+    local teleport_table = {
+        location1 = Vector3.new(272, 46, -351), -- your desired position
+        location2 = Vector3.new(275, 46, 385)  -- your desired position
+    }
+    
+    local tween_s = game:GetService('TweenService')
+    local tweeninfo = TweenInfo.new(0.8,Enum.EasingStyle.Linear)
+    
+    local lp = game.Players.LocalPlayer
+    
+    function bypass_teleport(v)
+        if lp.Character and 
+        lp.Character:FindFirstChild('HumanoidRootPart') then
+            local cf = CFrame.new(v)
+            local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+            a:Play()
+            -- a.Completed:Wait()
+            -- print('Teleporting Done!')
+        end
+    end
+    
+    bypass_teleport(teleport_table.location1)
+    wait(0.1)
+    bypass_teleport(teleport_table.location2)
+    
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99.6660614, 46.3899918, -426.956543, 0.726278007, 1.92989944e-08, 0.687401056, -1.04836415e-08, 1, -1.69987455e-08, -0.687401056, 5.13934983e-09, 0.726278007)
+wait()
+end
+end)
+end
+end
+end)
+end
+end
+end)
+end
+end
